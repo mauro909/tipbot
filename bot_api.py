@@ -60,16 +60,7 @@ class api:
     #---------IOTA API FUNCTIONS--------------#
 
     def send_transfer(self,addr,amount,new_address,index):
-        """
-        Wrapper function for iota.send_transfer
-        Parameters:
-            addr: the address to send the transfer to
-            amount: the amount of iota to send 
-            new_address: the address to migrate remaining iota to
-            index: the current address index(i.e. the count of all the used addresses)
-        Return:
-            The bundle that was attached to the tangle
-        """
+
         
         while True:
             try:  
@@ -121,7 +112,7 @@ class api:
                 transaction = Transaction.from_tryte_string(trytes[0])
             time.sleep(1)
         
-        #Increment the starting input by the number of inputs used
+
         num_inputs = 0
         for t in bundle.__iter__():
             if t.value < 0:

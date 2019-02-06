@@ -279,7 +279,7 @@ for withdraw_request in withdraw_requests:
 print("Message thread started. Waiting for messages...")
 print("Bot initalized.")
 
-#Main loop, Check through messages and comments for requests
+
 while True:
     time.sleep(1)
     with bot_db_lock:
