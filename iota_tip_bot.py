@@ -63,11 +63,6 @@ def deposits():
             address = deposit.address
 
             if address is None:
-
-                #lock the database
-                #generate the address
-                #add the address to the used addresses
-                #make sure address has 0 balance
                 with bot_db_lock:
                     while True:
                         address_index = bot_db.get_address_index()

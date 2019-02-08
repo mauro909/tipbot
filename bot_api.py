@@ -121,12 +121,6 @@ class api:
         return bundle
 
     def check_consistency(self,transaction):
-        """
-        Wrapper function for iota.check_consistency
-        Returns the consistency of the transaction
-        Parameters:
-            transaction: the transaction to check
-        """
         transaction_hash = transaction.hash
         while True:
             try:
