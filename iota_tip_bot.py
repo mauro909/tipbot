@@ -116,10 +116,7 @@ deposit_thread.start()
 
 withdraw_queue = queue.Queue()
 def withdraws():
-    """
-    A thread to handle all withdraw requests
-    Withdraw requests are pulled from the queue and executed one by one
-    """
+
     withdraws = []
     print("Withdraw thread started. Waiting for withdraws...")
     
