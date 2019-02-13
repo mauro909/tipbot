@@ -409,7 +409,6 @@ class api:
             return True
         return False
 
-
 class Database:
     """
     Implements necessary functions to read from and modify the database

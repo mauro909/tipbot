@@ -74,6 +74,7 @@ def deposits():
                 reply = "Please transfer your IOTA to this address:\n{0}\n\nDo not deposit to the same address more than once. This address will expire in 24 hours".format(address._trytes.decode("utf-8"))
                 logging.info('{0} was assigned to address {1}'.format(reddit_username,address._trytes.decode("utf-8")))
                 message.reply(reply + message_links)
+                
                 with bot_db_lock:
                     bot_db.remove_deposit_request(deposit)
                     deposit.address = address
@@ -268,8 +269,7 @@ for withdraw_request in withdraw_requests:
     withdraw = Withdraw(reddit_username,message,address,amount)
     withdraw_queue.put(withdraw)
 
-print("Message thread started. Waiting for messages...")
-print("Bot initalized.")
+
 
 
 while True:
